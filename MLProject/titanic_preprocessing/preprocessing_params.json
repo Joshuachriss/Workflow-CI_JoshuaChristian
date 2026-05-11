@@ -1,0 +1,14 @@
+{
+    "age_median": 28.0,
+    "fare_median": 14.4542,
+    "sex_mapping": {
+        "male": 1,
+        "female": 0
+    },
+    "fare_clip_upper": 73.41975000000001,
+    "scale_cols": [
+        "Age",
+        "Fare",
+        "FamilySize"
+    ]
+}
