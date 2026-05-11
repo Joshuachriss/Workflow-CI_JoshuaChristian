@@ -43,7 +43,7 @@ jobs:
         run: |
           cd MLProject
           mlflow run . \
-            --no-conda \
+            --env-manager local \
             -P n_estimators=${{ github.event.inputs.n_estimators || '100' }} \
             -P max_depth=${{ github.event.inputs.max_depth || '10' }} \
             -P max_features=${{ github.event.inputs.max_features || 'sqrt' }}
@@ -55,7 +55,7 @@ jobs:
           ls -la MLProject/mlproject_artifacts/
 
       - name: Upload MLflow Artifacts to GitHub Actions
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: titanic-mlflow-artifacts-${{ github.run_number }}
           path: |
